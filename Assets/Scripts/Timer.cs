@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
     if(unit>=0)
+    //sdfhkl
     unitCount.GetComponent<UnitToWinRemove>().count=unit;
         this.GetComponent<TextMeshProUGUI>().text = ((int)timeLeft).ToString();
         if(timeLeft > 0)
