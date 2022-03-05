@@ -41,7 +41,7 @@ public class ZombieMove : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.name == "FInish")
         {
