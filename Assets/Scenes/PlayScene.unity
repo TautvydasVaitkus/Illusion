@@ -812,6 +812,7 @@ MonoBehaviour:
   texttoactivate: {fileID: 974405446}
   timer: {fileID: 1948759476}
   price: 60
+  textprice: {fileID: 699110795}
 --- !u!61 &526439488
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1529,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -126, y: -45.744995}
+  m_AnchoredPosition: {x: -122, y: -45.744995}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974405448
@@ -2061,6 +2062,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 1689501090}
+  price: 100
+  zombie: {fileID: 124069640}
+  money: {fileID: 28293428}
+  timer: {fileID: 1948759476}
+  textprice: {fileID: 699110795}
 --- !u!1 &1316158492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,6 +2368,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 0}
+  price: 0
+  zombie: {fileID: 0}
+  money: {fileID: 0}
+  timer: {fileID: 0}
+  textprice: {fileID: 0}
 --- !u!1 &1568111662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2600,6 +2611,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 1886537061}
+  price: 200
+  zombie: {fileID: 124069640}
+  money: {fileID: 28293428}
+  timer: {fileID: 1948759476}
+  textprice: {fileID: 699110795}
 --- !u!1 &1680020702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,6 +2778,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 1095922900}
+  price: 30
+  zombie: {fileID: 124069640}
+  money: {fileID: 28293428}
+  timer: {fileID: 1948759476}
+  textprice: {fileID: 699110795}
 --- !u!1 &1689501090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 1555824169}
+  price: 0
+  zombie: {fileID: 124069640}
+  money: {fileID: 28293428}
+  timer: {fileID: 1948759476}
+  textprice: {fileID: 699110795}
 --- !u!114 &1882527969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,6 +3679,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texttoactivate: {fileID: 30524972}
+  price: 0
+  zombie: {fileID: 124069640}
+  money: {fileID: 28293428}
+  timer: {fileID: 1948759476}
+  textprice: {fileID: 699110795}
 --- !u!114 &1936612176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3745,7 +3776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3834,7 +3865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda73b81f9d557141a0e195ce34911a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 60
+  timeLeft: 10
 --- !u!1001 &2010427213
 PrefabInstance:
   m_ObjectHideFlags: 0

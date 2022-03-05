@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,6 +11,7 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public GameObject texttoactivate;
     public GameObject timer;
     public int price;
+    public GameObject textprice;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         texttoactivate.active = true;
+        textprice.GetComponent<TextMeshProUGUI>().text = price.ToString();
     }
     private void OnMouseExit()
     {
