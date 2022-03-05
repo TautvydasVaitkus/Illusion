@@ -9,7 +9,7 @@ public class ZombieMove : MonoBehaviour
     Rigidbody m_Rigidbody;
     private Timer timer;
     public int UnitsToWin = 5;
-
+    public int speedanim = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,7 @@ public class ZombieMove : MonoBehaviour
             if (transform.position.z <= -44)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                anim["Zombie|ZombieWalk"].speed = speedanim;
                 anim.Play("Zombie|ZombieWalk");
             }
         }
