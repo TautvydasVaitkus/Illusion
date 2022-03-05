@@ -8,6 +8,7 @@ public class ZombieMove : MonoBehaviour
     private Animation anim;
     Rigidbody m_Rigidbody;
     private Timer timer;
+    public int UnitsToWin = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -24,15 +25,24 @@ public class ZombieMove : MonoBehaviour
     void Update()
     {
 
-        /*if (timer.timeLeft >= 0)
+        if (timer.timeLeft >= 0)
         {
             anim.Play("Zombie|ZombieIdle");
-        }*/  
+        }  
         
+        if (timer.timeLeft <= 0)
+        {
             if (transform.position.z <= -44)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim.Play("Zombie|ZombieWalk");
-            }                 
+            }
+        }
+        
+        if(transform.position.z > -44.0f)
+        {
+            Destroy(this.gameObject);
+            UnitsToWin -= 1;
+        }
     }
 }
