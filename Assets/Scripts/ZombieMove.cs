@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZombieMove : MonoBehaviour
 {
     public float speed = 3.0f;
-    private Animation anim;
+    public Animation anim;
     Rigidbody m_Rigidbody;
     private Timer timer;
     public int UnitsToWin = 5;
@@ -25,6 +25,11 @@ public class ZombieMove : MonoBehaviour
     void Update()
     {
 
+        if (Object.ReferenceEquals(this, null))
+        {
+            this.enabled = false;
+        }
+
         if (timer.timeLeft >= 0)
         {
             anim.Play("Zombie|ZombieIdle");
@@ -39,10 +44,11 @@ public class ZombieMove : MonoBehaviour
             }
         }
         
-        if(transform.position.z > -44.0f)
+        if(transform.position.z > -44.0f && this.gameObject.active)
         {
             Destroy(this.gameObject);
             UnitsToWin -= 1;
         }
+
     }
 }
