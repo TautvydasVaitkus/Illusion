@@ -34,24 +34,24 @@ public class ZombieMove : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim["Zombie|ZombieWalk"].speed = speedanim;
+                StartCoroutine("wait");
                 anim.Play("Zombie|ZombieWalk");
+
             }
         }
-
-        /*if(transform.position.z > -44.0f)
-        {
-        timer.unit-=1;
-            Destroy(this.gameObject);
-            
-        }*/
-
     }
 
     void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.name == "FInish")
         {
-            Debug.Log("Do something here");
+            timer.unit -= 1;
+            Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(Random.Range(0.5f, 1f));
     }
 }
