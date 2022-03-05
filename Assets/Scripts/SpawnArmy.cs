@@ -25,15 +25,16 @@ public class SpawnArmy : MonoBehaviour
     }
     public void Spawn()
     {
-        for (int i = 1; i <= count.GetComponent<Spawner>().SpawnCounter; i++)
-        {
-            var position = new Vector3(Random.Range(26, 27.5f), 0.5f, Random.Range(-65.5f, -65));
-            StartCoroutine("wait");
-            Instantiate(zombie, position, Quaternion.identity);
-        }
+        StartCoroutine("wait");
     }
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+        for (int i = 1; i <= count.GetComponent<Spawner>().SpawnCounter; i++)
+        {
+            var position = new Vector3(Random.Range(26, 27.5f), 0.5f, Random.Range(-65.5f, -65));
+            yield return new WaitForSecondsRealtime(Random.Range(0f, 1f));
+            Instantiate(zombie, position, Quaternion.identity);
+        }
+
     }
 }
