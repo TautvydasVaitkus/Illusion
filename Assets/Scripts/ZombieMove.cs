@@ -39,9 +39,8 @@ public class ZombieMove : MonoBehaviour
         
         if(transform.position.z > -44.0f)
         {
-        timer.unit-=1;
+            timer.unit-=1;
             Destroy(this.gameObject);
-            
         }
 
     }
