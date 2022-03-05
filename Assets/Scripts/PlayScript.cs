@@ -21,7 +21,7 @@ public class PlayScript : MonoBehaviour,  IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("Level1", 0);
+        SceneManager.LoadScene("PlayScene", 0);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
