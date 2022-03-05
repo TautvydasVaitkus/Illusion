@@ -8,10 +8,13 @@ public class Timer : MonoBehaviour
     public float timeLeft;
     public int unit;
     public GameObject unitCount;
+    public GameObject next;
+    public GameObject nextimg;
     // Start is called before the first frame update
     void Start()
     {
-        
+        next.active = false;
+        nextimg.active = false;
     }
 
     // Update is called once per frame
@@ -23,5 +26,10 @@ public class Timer : MonoBehaviour
         this.GetComponent<TextMeshProUGUI>().text = ((int)timeLeft).ToString();
         if(timeLeft > 0)
         timeLeft -= Time.deltaTime;
+    if(unit == 0)
+        {
+            next.active = true;
+            nextimg.active = true;
+        }
     }
 }

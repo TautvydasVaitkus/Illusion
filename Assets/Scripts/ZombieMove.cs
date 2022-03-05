@@ -17,6 +17,7 @@ public class ZombieMove : MonoBehaviour
         anim = gameObject.GetComponent<Animation>();
         m_Rigidbody = GetComponent<Rigidbody>();
         timer = FindObjectOfType<Timer>();
+
     }
 
     // Update is called once per frame
@@ -33,16 +34,24 @@ public class ZombieMove : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim["Zombie|ZombieWalk"].speed = speedanim;
+                StartCoroutine("wait");
                 anim.Play("Zombie|ZombieWalk");
+
             }
         }
-        
-        if(transform.position.z > -44.0f)
-        {
-        timer.unit-=1;
-            Destroy(this.gameObject);
-            
-        }
+    }
 
+    public void OnTriggerEnter(Collider collision)
+    {
+        if(collision.gameObject.name == "FInish")
+        {
+            timer.unit -= 1;
+            Destroy(this.gameObject);
+        }
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(Random.Range(0.5f, 1f));
     }
 }
