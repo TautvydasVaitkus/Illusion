@@ -37,14 +37,14 @@ public class ZombieMove : MonoBehaviour
         
         if (timer.timeLeft <= 0)
         {
-            if (transform.position.z <= -44)
+            if (transform.position.z > -44.0f && this.gameObject.active)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim.Play("Zombie|ZombieWalk");
             }
         }
         
-        if(transform.position.z > -44.0f && this.gameObject.active)
+        if(transform.position.z > -44.0f)
         {
             Destroy(this.gameObject);
             UnitsToWin -= 1;
