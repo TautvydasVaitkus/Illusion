@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\OptionScript.cs" />
+    <Compile Include="Assets\Scripts\ZombieMove.cs" />
     <Compile Include="Assets\Scripts\PlayScript.cs" />
     <Compile Include="Assets\Scripts\QuitScript.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\MoneySystem.cs" />
+    <Compile Include="Assets\Scripts\BuyUnit.cs" />
     <Compile Include="Assets\Scripts\MutationUI.cs" />
   </ItemGroup>
   <ItemGroup>
