@@ -555,7 +555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 2, y: 29.9}
+  m_AnchoredPosition: {x: 2, y: 29.900024}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195418170
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiesToWin: {fileID: 0}
+  count: 0
 --- !u!1001 &214358238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1338,7 +1339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &568754738
 GameObject:
@@ -1642,6 +1643,7 @@ GameObject:
   - component: {fileID: 745234506}
   - component: {fileID: 745234505}
   - component: {fileID: 745234504}
+  - component: {fileID: 745234510}
   m_Layer: 5
   m_Name: Speed Upgrade
   m_TagString: Untagged
@@ -1795,6 +1797,21 @@ RectTransform:
   m_AnchoredPosition: {x: -38, y: -167}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &745234510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745234503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1abb1dc8c1e39ee439f9f9bd8db3a4b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombie: {fileID: 1335219862}
+  money: {fileID: 1942092084}
+  timer: {fileID: 1792854430}
 --- !u!1 &866678617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,7 +2278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 40d38db73deb48740acc658169aa54a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 40d38db73deb48740acc658169aa54a6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2520,7 +2537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e002a565f8036a94e8b857541069e176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.1
+  speedanim: 1
   UnitsToWin: 5
 --- !u!1 &1367616488
 GameObject:
@@ -2877,7 +2895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -28.1, y: 45.2}
+  m_AnchoredPosition: {x: -28.099976, y: 45.200012}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1518526584
@@ -3431,6 +3449,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629011286}
   m_CullTransparentMesh: 1
+--- !u!1 &1655584489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655584491}
+  - component: {fileID: 1655584490}
+  m_Layer: 0
+  m_Name: ZombieSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1655584490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655584489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5911e2261989743b1eaaf53c966cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombie: {fileID: 1335219862}
+  money: {fileID: 1942092084}
+  timer: {fileID: 1792854430}
+  count: {fileID: 45410740}
+--- !u!4 &1655584491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655584489}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 690.153, y: 61.129997, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792854430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,7 +3675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc39f6ed485ae5478a1a1adec30393e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 300
+  Money: 1000
   text: {fileID: 1518526582}
 --- !u!4 &1942092086
 Transform:
@@ -3624,7 +3690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950703096
 GameObject:

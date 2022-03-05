@@ -27,12 +27,12 @@ public class SpawnArmy : MonoBehaviour
         for (int i = 1; i <= count.GetComponent<Spawner>().SpawnCounter; i++)
         {
             var position = new Vector3(Random.Range(26, 27.5f), 0.5f, Random.Range(-65.5f, -65));
-            Instantiate(zombie, position, Quaternion.identity);
             StartCoroutine("wait");
+            Instantiate(zombie, position, Quaternion.identity);
         }
     }
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(Random.Range(0f, 1f));
+        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
     }
 }

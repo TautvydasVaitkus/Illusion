@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ZombieMove : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float speed = 0.1f;
+    public int speedanim = 1;
     private Animation anim;
     Rigidbody m_Rigidbody;
     private Timer timer;
@@ -17,7 +18,6 @@ public class ZombieMove : MonoBehaviour
         anim = gameObject.GetComponent<Animation>();
         m_Rigidbody = GetComponent<Rigidbody>();
         timer = FindObjectOfType<Timer>();
-        Debug.Log(timer.timeLeft);
 
     }
 
@@ -35,6 +35,7 @@ public class ZombieMove : MonoBehaviour
             if (transform.position.z <= -44)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                anim["Zombie|ZombieWalk"].speed = speedanim;
                 anim.Play("Zombie|ZombieWalk");
             }
         }
