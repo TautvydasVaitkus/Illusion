@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ZombieMove : MonoBehaviour
 {
-    public float speed = 0.1f;
-    public int speedanim = 1;
-    private Animation anim;
+    public float speed = 3.0f;
+    public Animation anim;
     Rigidbody m_Rigidbody;
     private Timer timer;
     public int UnitsToWin = 5;
@@ -18,12 +17,18 @@ public class ZombieMove : MonoBehaviour
         anim = gameObject.GetComponent<Animation>();
         m_Rigidbody = GetComponent<Rigidbody>();
         timer = FindObjectOfType<Timer>();
+        Debug.Log(timer.timeLeft);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Object.ReferenceEquals(this, null))
+        {
+            this.enabled = false;
+        }
 
         if (timer.timeLeft >= 0)
         {
@@ -35,16 +40,15 @@ public class ZombieMove : MonoBehaviour
             if (transform.position.z <= -44)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                anim["Zombie|ZombieWalk"].speed = speedanim;
-                Debug.Log("a");
                 anim.Play("Zombie|ZombieWalk");
             }
         }
         
-        if(transform.position.z > -44.0f)
+        if(transform.position.z > -44.0f && this.gameObject.active)
         {
             Destroy(this.gameObject);
             UnitsToWin -= 1;
         }
+
     }
 }
