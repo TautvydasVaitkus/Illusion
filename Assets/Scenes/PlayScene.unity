@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 195418169}
   - component: {fileID: 195418171}
   - component: {fileID: 195418170}
+  - component: {fileID: 195418172}
   m_Layer: 5
   m_Name: UnitCount
   m_TagString: Untagged
@@ -654,6 +655,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195418168}
   m_CullTransparentMesh: 1
+--- !u!114 &195418172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195418168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e30174b2600a4e9ced4fab60b6f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiesToWin: {fileID: 0}
 --- !u!1001 &214358238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1634,7 +1648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &745234504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,7 +2085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &965317207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2506,7 +2520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e002a565f8036a94e8b857541069e176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 2
+  UnitsToWin: 5
 --- !u!1 &1367616488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,7 +2543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1367616489
 RectTransform:
   m_ObjectHideFlags: 0
