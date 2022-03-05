@@ -36,6 +36,7 @@ public class ZombieMove : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim["Zombie|ZombieWalk"].speed = speedanim;
+                Debug.Log("a");
                 anim.Play("Zombie|ZombieWalk");
             }
         }
