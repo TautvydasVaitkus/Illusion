@@ -15,8 +15,7 @@ public class SpeedUPG : MonoBehaviour, IPointerClickHandler
         if (timer.GetComponent<Timer>().timeLeft > 0 && money.GetComponent<MoneySystem>().Money >= this.GetComponent<OptionScript>().price)
         {
             zombie.GetComponent<ZombieMove>().speed += (float)0.1;
-            Animation anim = zombie.GetComponent<Animation>();
-            anim["Zombie|ZombieWalk"].speed += 1;
+            zombie.GetComponent<ZombieMove>().speedanim += 1;
         }
     }
     // Update is called once per frame
