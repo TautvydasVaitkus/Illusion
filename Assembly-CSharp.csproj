@@ -53,10 +53,14 @@
     <UnityVersion>2021.2.7f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayScript.cs" />
-    <Compile Include="Assets\QuitScript.cs" />
-    <Compile Include="Assets\MoneySystem.cs" />
-    <Compile Include="Assets\Spawner.cs" />
+    <Compile Include="Assets\Scripts\PlayScript.cs" />
+    <Compile Include="Assets\Scripts\QuitScript.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\MoneySystem.cs" />
+    <Compile Include="Assets\Scripts\OptionScript.cs" />
+    <Compile Include="Assets\Scripts\MutationUI.cs" />
+    <Compile Include="Assets\Scripts\CloseMutationUI.cs" />
+    <Compile Include="Assets\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

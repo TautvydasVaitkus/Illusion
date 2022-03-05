@@ -344,10 +344,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/MoneySystem.cs"
-"Assets/PlayScript.cs"
-"Assets/QuitScript.cs"
-"Assets/Spawner.cs"
+"Assets/Scripts/CloseMutationUI.cs"
+"Assets/Scripts/MoneySystem.cs"
+"Assets/Scripts/MutationUI.cs"
+"Assets/Scripts/OptionScript.cs"
+"Assets/Scripts/PlayScript.cs"
+"Assets/Scripts/QuitScript.cs"
+"Assets/Scripts/Spawner.cs"
+"Assets/Timer.cs"
 -langversion:9.0
 
 /deterministic
