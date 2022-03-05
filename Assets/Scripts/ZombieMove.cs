@@ -8,7 +8,7 @@ public class ZombieMove : MonoBehaviour
     public Animation anim;
     Rigidbody m_Rigidbody;
     private Timer timer;
-    public int UnitsToWin = 5;
+  
     public int speedanim = 1;
     // Start is called before the first frame update
     void Start()
@@ -47,8 +47,9 @@ public class ZombieMove : MonoBehaviour
         
         if(transform.position.z > -44.0f && this.gameObject.active)
         {
+        timer.unit-=1;
             Destroy(this.gameObject);
-            UnitsToWin -= 1;
+            
         }
 
     }

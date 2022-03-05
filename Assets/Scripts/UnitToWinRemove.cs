@@ -18,6 +18,6 @@ public class UnitToWinRemove : MonoBehaviour
     void Update()
     {
 
-        GetComponent<TMPro.TextMeshProUGUI>().text = zombiesToWin.UnitsToWin.ToString();
+        GetComponent<TMPro.TextMeshProUGUI>().text = count.ToString();
     }
 }

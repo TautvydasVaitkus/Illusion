@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee773510-d2ff-44c6-b93b-202a4cdb1967" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UnitToWinRemove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UnitToWinRemove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ZombieMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ZombieMove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
     </list>
@@ -45,7 +46,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646495590495</updated>
-      <workItem from="1646495809634" duration="1358000" />
+      <workItem from="1646495809634" duration="1944000" />
     </task>
     <servers />
   </component>
