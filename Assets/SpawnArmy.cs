@@ -28,6 +28,11 @@ public class SpawnArmy : MonoBehaviour
         {
             var position = new Vector3(Random.Range(26, 27.5f), 0.5f, Random.Range(-65.5f, -65));
             Instantiate(zombie, position, Quaternion.identity);
+            StartCoroutine("wait");
         }
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(Random.Range(0f, 1f));
     }
 }
