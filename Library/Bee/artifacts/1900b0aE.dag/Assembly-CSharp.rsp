@@ -344,10 +344,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/MoneySystem.cs"
 "Assets/PlayScript.cs"
 "Assets/QuitScript.cs"
+<<<<<<< HEAD
 "Assets/Scripts/PlayButton.cs"
 "Assets/Scripts/ZombieMove.cs"
+=======
+"Assets/Spawner.cs"
+>>>>>>> db52b759b4dc20a03768af4a261bf112d02442f2
 -langversion:9.0
 
 /deterministic
