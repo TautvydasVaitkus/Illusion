@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public GameObject money;
     public int SpawnCounter = 0;
     public GameObject texttoactivate;
+    public GameObject timer;
+    public int price;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,11 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        money.GetComponent<MoneySystem>().Money = money.GetComponent<MoneySystem>().Money - 5;
-        SpawnCounter++;
+        if (timer.GetComponent<Timer>().timeLeft > 0 && money.GetComponent<MoneySystem>().Money >= price)
+        {
+            money.GetComponent<MoneySystem>().Money = money.GetComponent<MoneySystem>().Money - price;
+            SpawnCounter++;
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
