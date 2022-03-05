@@ -37,7 +37,7 @@ public class ZombieMove : MonoBehaviour
         
         if (timer.timeLeft <= 0)
         {
-            if (transform.position.z > -44.0f && this.gameObject.active)
+            if (transform.position.z < -44.0f)
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 anim["Zombie|ZombieWalk"].speed = speedanim;

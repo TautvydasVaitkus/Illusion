@@ -9,6 +9,7 @@ public class SpawnArmy : MonoBehaviour
     public GameObject timer;
     private bool spawned = false;
     public GameObject count;
+
     public void Start()
     {
         spawned = false;
@@ -19,8 +20,8 @@ public class SpawnArmy : MonoBehaviour
             {
             Spawn();
             spawned = true;
+
         }
-            
     }
     public void Spawn()
     {

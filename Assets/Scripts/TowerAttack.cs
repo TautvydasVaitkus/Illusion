@@ -19,7 +19,6 @@ public class TowerAttack : MonoBehaviour
         if (transform.position.z - movingZombie.transform.position.z < 2)
         {
             Destroy(movingZombie.gameObject);
-
         }
     }
 }
