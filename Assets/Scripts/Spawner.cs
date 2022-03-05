@@ -28,16 +28,12 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        texttoactivate.active = false;
+        texttoactivate.SetActive(false);
     }
     // Update is called once per frame
     public void OnPointerEnter(PointerEventData eventData)
     {
-        texttoactivate.active = true;
+        texttoactivate.SetActive(true);
         textprice.GetComponent<TextMeshProUGUI>().text = price.ToString();
-    }
-    private void OnMouseExit()
-    {
-        texttoactivate.active = false;
     }
 }
