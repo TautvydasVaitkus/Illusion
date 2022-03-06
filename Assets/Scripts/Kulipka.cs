@@ -5,7 +5,7 @@ using UnityEngine;
 public class Kulipka : MonoBehaviour
 {
 public float speed=5f;
-public Transform target;
+public Transform target = null;
     public float greitis =  70f;
     // Start is called before the first frame update
    
