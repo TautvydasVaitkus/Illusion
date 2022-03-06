@@ -6,26 +6,32 @@ public class Kulipka : MonoBehaviour
 {
 public float speed=5f;
 public Transform target;
+    public float greitis =  70f;
     // Start is called before the first frame update
-    void Start()
+   
+    public void Seek(Transform _target)
     {
-        
+        target = _target;
     }
-
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir=target.position - this.transform.localPosition;
-        float distThisFrame=speed*Time.deltaTime;
-        if(dir.magnitude<=distThisFrame){
-        DoBulletHit();
+        if(target == null)
+        {
+            Destroy(gameObject);
         }
-        else{
-        transform.Translate(dir.normalized*distThisFrame,Space.World);
-        
+        Vector3 dir = target.position - transform.position;
+        float distanceframe = speed * Time.deltaTime;
+        if(dir.magnitude <= distanceframe)
+        {
+            HitTarget();
+            return;
         }
+        transform.Translate(dir.normalized * distanceframe, Space.World);
     }
-    void DoBulletHit(){
-    Destroy(gameObject);
+    void HitTarget()
+    {
+        Destroy(target.gameObject);
+        Destroy(gameObject);
     }
 }

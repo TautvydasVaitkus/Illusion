@@ -4,45 +4,62 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
- float range =2f;
+ float range =3f;
  public  GameObject kulipka;
- float fireCooldown=1f;
- float fireCooldownLeft=0;
+ public Transform firepoint;
+    public Transform target;
+ public float firerate = 3f;
+    float firecountdown = 0f;
  //public GameObject kulipka;
     public GameObject movingZombie;
     //private Vaector3 kulipkos;
     // Start is called before the first frame update
     private void Awake(){
-    kulipka.transform.position=transform.Find("Kulipkos").position;
+    //kulipka.transform.position=transform.Find("Kulipkos").position;
     }
     void Start()
     {
-        movingZombie = FindObjectOfType<ZombieMove>();
-        kulipka=FindObjectOfType<Kulipka>();
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
-
-    // Update is called once per frame
-    void Update()
+    void UpdateTarget()
     {
-    GameObject[] zombies=GameObject.FindObjectOfType<ZombieMove>();
-    GameObject nearestZombie=null;
-    foreach(GameObject e in zombies){
-    float d = Vector3.Distance(this.transform.position,e.transform.position);
-        if (nearestZombie == null || d<range)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
+        float shortest = Mathf.Infinity;
+        GameObject nearest = null;
+        foreach (GameObject enemy in enemies)
         {
-        nearestZombie=e;
-            //dist=d;
+            float distancetoenemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distancetoenemy < shortest)
+            {
+                shortest = distancetoenemy;
+                nearest = enemy;
+            }
         }
+        if (nearest != null && shortest <= range)
+        {
+            target = nearest.transform;
         }
-        fireCooldownLeft-=Time.deltaTime;
-        if(fireCooldownLeft <=0){
-        Shoot(nearestZombie);
+        else{
+            target = null;
         }
-        void Shoot(GameObject e){
-        fireCooldownLeft=fireCooldown;
-        GameObject bulletGO=(GameObject)Instantiate(kulipka,this.transform);
-        kulipka.transform.position = new Vector3(-0.93f, 0.3f, -0.0f);
+    }
+    // Update is called once per frame
+    public void Update()
+    {
+        if(firecountdown <= 0f)
+        {
+            Shoot();
+            firecountdown = 1f / firerate; 
         }
-
+        firecountdown -= Time.deltaTime;
+    }
+    void Shoot()
+    {
+       GameObject go = (GameObject)Instantiate(kulipka, firepoint.position, firepoint.rotation);
+        Kulipka bullet = kulipka.GetComponent<Kulipka>();
+        if(bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
 }
