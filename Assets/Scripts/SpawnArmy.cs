@@ -9,6 +9,7 @@ public class SpawnArmy : MonoBehaviour
     public GameObject timer;
     private bool spawned = false;
     public GameObject count;
+    public List<GameObject> _clones = new List<GameObject>();
 
     public void Start()
     {
@@ -33,7 +34,8 @@ public class SpawnArmy : MonoBehaviour
         {
             var position = new Vector3(Random.Range(26, 27.5f), 0.5f, Random.Range(-65.5f, -65));
             yield return new WaitForSecondsRealtime(Random.Range(0f, 1f));
-            Instantiate(zombie, position, Quaternion.identity);
+            var clone = Instantiate(zombie, position, Quaternion.identity);
+            _clones.Add(clone);
         }
 
     }

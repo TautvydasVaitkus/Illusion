@@ -4,62 +4,51 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
- float range =3f;
- public  GameObject kulipka;
- public Transform firepoint;
-    public Transform target;
- public float firerate = 3f;
-    float firecountdown = 0f;
- //public GameObject kulipka;
-    public GameObject movingZombie;
-    //private Vaector3 kulipkos;
+
+    public ZombieMove movingZombie;
+    private float nextActionTime = -5f;
+    public GameObject findZombie;
+    public SpawnArmy zombieClones;
+    private float minDist;
+    private GameObject bestTarget;
+    private AudioSource source;
+
     // Start is called before the first frame update
-    private void Awake(){
-    //kulipka.transform.position=transform.Find("Kulipkos").position;
-    }
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        movingZombie = FindObjectOfType<ZombieMove>();
+        findZombie = GameObject.Find("ZombieMenu");
+        zombieClones = FindObjectOfType<SpawnArmy>();
+        source = GetComponent<AudioSource>();
     }
-    void UpdateTarget()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Player");
-        float shortest = Mathf.Infinity;
-        GameObject nearest = null;
-        foreach (GameObject enemy in enemies)
-        {
-            float distancetoenemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distancetoenemy < shortest)
-            {
-                shortest = distancetoenemy;
-                nearest = enemy;
-            }
-        }
-        if (nearest != null && shortest <= range)
-        {
-            target = nearest.transform;
-        }
-        else{
-            target = null;
-        }
-    }
+
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
-        if(firecountdown <= 0f)
+        minDist = 999;
+
+
+        if (nextActionTime < 0f)
         {
-            Shoot();
-            firecountdown = 1f / firerate; 
+            Debug.Log("SHOT");
+            foreach (var cloneObj in zombieClones._clones)
+            {
+                if (transform.position.z - cloneObj.transform.position.z < 0.02f && transform.position.y - cloneObj.transform.position.y < 2)
+                {
+                    Destroy(cloneObj);
+                }
+            }
+            nextActionTime = 5f;
         }
-        firecountdown -= Time.deltaTime;
+        else
+        {
+            nextActionTime -= Time.deltaTime;
+        }
+ 
     }
-    void Shoot()
+
+    IEnumerator wait()
     {
-       GameObject go = (GameObject)Instantiate(kulipka, firepoint.position, firepoint.rotation);
-        Kulipka bullet = kulipka.GetComponent<Kulipka>();
-        if(bullet != null)
-        {
-            bullet.Seek(target);
-        }
+        yield return new WaitForSecondsRealtime(5f);
     }
 }
