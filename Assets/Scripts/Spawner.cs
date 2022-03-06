@@ -14,10 +14,7 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public GameObject textprice;
     public int multiplier = 1;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (timer.GetComponent<Timer>().timeLeft > 0 && money.GetComponent<MoneySystem>().Money >= price)
@@ -36,8 +33,5 @@ public class Spawner : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
         texttoactivate.active = true;
         textprice.GetComponent<TextMeshProUGUI>().text = price.ToString();
     }
-    private void OnMouseExit()
-    {
-        texttoactivate.active = false;
-    }
+
 }
